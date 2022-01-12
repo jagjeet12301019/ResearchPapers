@@ -1,0 +1,1558 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.researchpapers.com/Ontology#"
+     xml:base="http://www.researchpapers.com/Ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.researchpapers.com/Ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Dataset_Has_Paper -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Dataset_Has_Paper">
+        <owl:inverseOf rdf:resource="http://www.researchpapers.com/Ontology#Paper_Used_Dataset"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Dataset_Has_Publisher -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Dataset_Has_Publisher">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <rdfs:comment>Dataset Pubisher organization e.g. Kaggle, Sklearn</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Almost_Same_To -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Almost_Same_To">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Has_Author -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Has_Author">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <rdfs:comment>Paper&apos;s main author</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Has_Co_Author -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Has_Co_Author">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Co_Author"/>
+        <rdfs:comment>Co-Authors of the Paper</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Has_Index -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Has_Index">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Index"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Has_Language -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Has_Language">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Language"/>
+        <rdfs:comment>In which lagaugae paper is written</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Has_ProblemType -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Has_ProblemType">
+        <owl:inverseOf rdf:resource="http://www.researchpapers.com/Ontology#ProblemType_Has_Paper"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Has_Publisher -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Has_Publisher">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <rdfs:comment>Paper has publishing Organization like ScienceDirect,IEEE</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Has_Subject -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Has_Subject">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Subject"/>
+        <rdfs:comment>Paper at glance is of subject e.g , Physics</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Used_Dataset -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Used_Dataset">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <rdfs:comment>Dataset Used by the paper</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#ProblemType_Has_Paper -->
+
+    <owl:ObjectProperty rdf:about="http://www.researchpapers.com/Ontology#ProblemType_Has_Paper">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#CNN_TYPE -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#CNN_TYPE">
+        <rdfs:subPropertyOf rdf:resource="http://www.researchpapers.com/Ontology#Key_Topic"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#CNN"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Cited_By -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Cited_By">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Paper has have direct ( Data Property) Cited By</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Dataset_Size -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Dataset_Size">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>How many samples a Dataset Have</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Dataset_Website -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Dataset_Website">
+        <rdfs:subPropertyOf rdf:resource="http://www.researchpapers.com/Ontology#Website"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#First_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#First_Name">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Author"/>
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Co_Author"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#KNN_TYPE -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#KNN_TYPE">
+        <rdfs:subPropertyOf rdf:resource="http://www.researchpapers.com/Ontology#Key_Topic"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#KNN"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Key_Topic -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Key_Topic">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Topic"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#LSTM_TYPE -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#LSTM_TYPE">
+        <rdfs:subPropertyOf rdf:resource="http://www.researchpapers.com/Ontology#Key_Topic"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#LSTM"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Last_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Last_Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Author"/>
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Co_Author"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment>Paper has Author and Co-Author (Obejct Properties) And both Have  First_Name and Last_Name (Data_Properties)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Country"/>
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Dataset"/>
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Language"/>
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Publisher"/>
+                    <rdf:Description rdf:about="http://www.researchpapers.com/Ontology#Subject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:comment>Paper is Written in a Language (Object Property) And Language have a Name (Data Property)
+Paper Has Publisher (Obejct Properties) And Publisher have Name (Data Property)
+Paper Has SUbject (Object Property) and Subject Have Name (Data Property)
+Paper Has Dataset (Object_Property) and Dataset have Name (Data_Property)</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper_Website -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Paper_Website">
+        <rdfs:subPropertyOf rdf:resource="http://www.researchpapers.com/Ontology#Website"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Problem_Spec -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Problem_Spec">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#SVM_TYPE -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#SVM_TYPE">
+        <rdfs:subPropertyOf rdf:resource="http://www.researchpapers.com/Ontology#Key_Topic"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#SVM"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Size_in_MB -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Size_in_MB">
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Title -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Title">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:comment>Paper And Dataset both also have direct Data Property Title</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Versions -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Versions">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Paper has Direct data property Number of versions</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Website -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Website"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Year_Published -->
+
+    <owl:DatatypeProperty rdf:about="http://www.researchpapers.com/Ontology#Year_Published">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Author -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Author">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Big_Data -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Big_Data">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Data_Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Books -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Books"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#CNN -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#CNN">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Topic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Chemistry -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Chemistry">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Subject"/>
+        <owl:disjointWith rdf:resource="http://www.researchpapers.com/Ontology#Computer_Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Classification -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Classification">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Co_Author -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Co_Author">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Computer_Science -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Computer_Science">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Country -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Country"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Data_Science -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Data_Science">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Computer_Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Dataset -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Dataset"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#English -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#English">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#German -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#German">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Index -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Index">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Keyword_Topic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#KNN -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#KNN">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Topic"/>
+        <rdfs:comment>K Nearest Neighbour can be search topic of the user</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Keyword_Topic -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Keyword_Topic"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#LSTM -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#LSTM">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Topic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Language -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Language"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Machine_Learning -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Machine_Learning">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Data_Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Mandarian -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Mandarian">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Neural_Networks -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Neural_Networks">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Data_Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Ontology_Design -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Ontology_Design">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Operating_System -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Operating_System">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Computer_Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Organization -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Organization"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Paper -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Paper"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Person -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Person"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Physics -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Physics">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Problem_Type -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Problem_Type"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Professionals -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Professionals">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Researchers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Professors -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Professors">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Researchers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Publisher -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Publisher">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Regression -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Regression">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Researchers -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Researchers">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#SVM -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#SVM">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Topic"/>
+        <rdfs:comment>Support Vector Machine can be search of the user</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Samples_In_Dataset -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Samples_In_Dataset">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Semantic_Technology -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Semantic_Technology">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Data_Science"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Space -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Space">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Students -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Students">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Researchers"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Subject -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Subject"/>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Topic -->
+
+    <owl:Class rdf:about="http://www.researchpapers.com/Ontology#Topic">
+        <rdfs:subClassOf rdf:resource="http://www.researchpapers.com/Ontology#Keyword_Topic"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#ASR_Work -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#ASR_Work">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78909</Dataset_Size>
+        <Dataset_Website>MDPI</Dataset_Website>
+        <Name>Automatic Speech Recognition</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Academia -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Academia">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Academia</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#American_English -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#American_English">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#English"/>
+        <Name>American English</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Boston_House_Price -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Boston_House_Price">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Sklearn"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">656</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sklearn</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Boston House Price</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Breast_cancer_wisconsin -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Breast_cancer_wisconsin">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Sklearn"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3453</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sklearn</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Breast cancer wisconsin (diagnostic) dataset</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">234</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#British_English -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#British_English">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#English"/>
+        <Name>British English</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#China -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#China">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Country"/>
+        <Name>China</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Classification_Audio -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Classification_Audio">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Classification"/>
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+        <Problem_Spec>Speech and Audio Classification</Problem_Spec>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Classification_Images -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Classification_Images">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Classification"/>
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+        <Problem_Spec>Classificaition_of_images</Problem_Spec>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#CostalAether -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#CostalAether">
+        <Name>CostalAether</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Crypto_Prediction -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Crypto_Prediction">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Kaggle"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78900</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kaggle</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Crypto_Prediction</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3456</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Diabetes_dataset -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Diabetes_dataset">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Sklearn"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1800</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sklearn</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Diabetes dataset</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">165</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Digit_Recognition -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Digit_Recognition">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Tensorflow"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45080</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tensorflow</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Digit_Recognition</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1467</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#DongWang -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#DongWang">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <First_Name>Dong</First_Name>
+        <First_Name>Wang</First_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Econstor -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Econstor">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Econstor</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#English -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#English">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#English"/>
+        <Name>English</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#France -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#France">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Country"/>
+        <Name>France</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Future_Sales -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Future_Sales">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Kaggle"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7086</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kaggle</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Future Sales</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">654</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Gagabox -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Gagabox">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gagabox</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#German -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#German">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Language"/>
+        <Name>German</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Germany -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Germany">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Country"/>
+        <Name>Germany</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#GoVivace -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#GoVivace">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#IEEE -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#IEEE">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">IEEE</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Iris -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Iris">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Sklearn"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sklearn.com</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Iris</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#JArjun -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#JArjun">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Co_Author"/>
+        <First_Name>Arjun</First_Name>
+        <Last_Name>J</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#JZPan -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#JZPan">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <First_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pan</First_Name>
+        <Last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JZ</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Japan -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Japan">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Country"/>
+        <Name>Japan</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Jstor -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Jstor">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jstor</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#KRajesh -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#KRajesh">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <First_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rajesh</First_Name>
+        <Last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Kaggle -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Kaggle">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name>Kaggle</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Linnerrud_dataset -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Linnerrud_dataset">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Sklearn"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1298</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sklearn</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Linnerrud dataset</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">685</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Logistic_Regression_dichotomous -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Logistic_Regression_dichotomous">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <Paper_Has_Author rdf:resource="http://www.researchpapers.com/Ontology#KRajesh"/>
+        <Paper_Has_Co_Author rdf:resource="http://www.researchpapers.com/Ontology#JArjun"/>
+        <Paper_Has_Index rdf:resource="http://www.researchpapers.com/Ontology#01_ML_REG_Optical"/>
+        <Paper_Has_Language rdf:resource="http://www.researchpapers.com/Ontology#English"/>
+        <Paper_Has_ProblemType rdf:resource="http://www.researchpapers.com/Ontology#Regression_Financial_Data"/>
+        <Paper_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#psycnet"/>
+        <Paper_Has_Subject rdf:resource="http://www.researchpapers.com/Ontology#Subject_Machine_Learning"/>
+        <Paper_Used_Dataset rdf:resource="http://www.researchpapers.com/Ontology#Optical_recognition"/>
+        <Cited_By rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">699</Cited_By>
+        <LSTM_TYPE>LSTM_and_logistic_regression</LSTM_TYPE>
+        <Paper_Website>psycnet.com</Paper_Website>
+        <Title>Logistic Regression</Title>
+        <Versions rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</Versions>
+        <Year_Published rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1995</Year_Published>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#ML_Zhang -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#ML_Zhang">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <First_Name>ML</First_Name>
+        <Last_Name>Zhang</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Making_large-scale_SVM_learning_practical -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Making_large-scale_SVM_learning_practical">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <Paper_Has_Author rdf:resource="http://www.researchpapers.com/Ontology#TJoachims"/>
+        <Paper_Has_Co_Author rdf:resource="http://www.researchpapers.com/Ontology#NA"/>
+        <Paper_Has_Index rdf:resource="http://www.researchpapers.com/Ontology#02_ML_Class_Diabet"/>
+        <Paper_Has_Language rdf:resource="http://www.researchpapers.com/Ontology#English"/>
+        <Paper_Has_ProblemType rdf:resource="http://www.researchpapers.com/Ontology#Classification_Images"/>
+        <Paper_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#econstor"/>
+        <Paper_Has_Subject rdf:resource="http://www.researchpapers.com/Ontology#Subject_Machine_Learning"/>
+        <Paper_Used_Dataset rdf:resource="http://www.researchpapers.com/Ontology#Diabetes_dataset"/>
+        <Cited_By rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7793</Cited_By>
+        <Paper_Website>econstor.com</Paper_Website>
+        <SVM_TYPE>SVM_and_Large_Scale_Synamics</SVM_TYPE>
+        <Title>SVM Practical</Title>
+        <Versions rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</Versions>
+        <Year_Published rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1998</Year_Published>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Mandarian -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Mandarian">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Language"/>
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Mandarian"/>
+        <Name>Mandarian</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Mandarian_Speech_Recognition -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Mandarian_Speech_Recognition">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <Paper_Has_Author rdf:resource="http://www.researchpapers.com/Ontology#DongWang"/>
+        <Paper_Has_Co_Author rdf:resource="http://www.researchpapers.com/Ontology#Xiaodong_Wang"/>
+        <Paper_Has_Index rdf:resource="http://www.researchpapers.com/Ontology#04_ML_Class_Mandarian"/>
+        <Paper_Has_Language rdf:resource="http://www.researchpapers.com/Ontology#Mandarian"/>
+        <Paper_Has_ProblemType rdf:resource="http://www.researchpapers.com/Ontology#Classification_Audio"/>
+        <Paper_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#GoVivace"/>
+        <Paper_Has_Subject rdf:resource="http://www.researchpapers.com/Ontology#Subject_Big_Data_Speech"/>
+        <Paper_Used_Dataset rdf:resource="http://www.researchpapers.com/Ontology#ASR_Work"/>
+        <CNN_TYPE>CNN-2D_and_NLP</CNN_TYPE>
+        <Cited_By rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">145</Cited_By>
+        <Paper_Website>GoVivace.com</Paper_Website>
+        <Title>Mandarian Speech Recognititon SYstem CNN</Title>
+        <Versions rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</Versions>
+        <Year_Published rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2019</Year_Published>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#NA -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#NA">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Co_Author"/>
+        <First_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</First_Name>
+        <Last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NA</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Nozdr -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Nozdr">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nozdr</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Optical_recognition -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Optical_recognition">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Sklearn"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1400</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sklearn</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Optical recognition of handwritten digits dataset</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">343</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#PhilPapers -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#PhilPapers">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PhilPapers</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Professor_AK_Oxford -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Professor_AK_Oxford">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Professors"/>
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Researchers"/>
+        <Name>Professor Annie Kane doing research from Oxford University</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Psu -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Psu">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Psu</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#RGirshick -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#RGirshick">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <First_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Girshick</First_Name>
+        <Last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Regression_Financial_Data -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Regression_Financial_Data">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Problem_Type"/>
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Regression"/>
+        <Problem_Spec>Financial Regression Models</Problem_Spec>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#ResearchGate -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#ResearchGate">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ResearchGate</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#STaab -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#STaab">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Co_Author"/>
+        <First_Name>Taab</First_Name>
+        <Last_Name>S</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#SWeisberg -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#SWeisberg">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <First_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weisberg</First_Name>
+        <Last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Sample_Audio -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Sample_Audio">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Samples_In_Dataset"/>
+        <Name>Sample_Type_of_Dataset_is_Audio</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Sample_Csv -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Sample_Csv">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Samples_In_Dataset"/>
+        <Name>Dataset sample type is csv</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Sample_Images -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Sample_Images">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Samples_In_Dataset"/>
+        <Name>Sample_Type_is_Images and pictures</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Science_DIrect -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Science_DIrect">
+        <Name>Science_Direct</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Sklearn -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Sklearn">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name>Sklearn</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Student_ARU -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Student_ARU">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Researchers"/>
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Students"/>
+        <Name>Students doing research from ARU</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Student_Oxford -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Student_Oxford">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Researchers"/>
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Students"/>
+        <Name>Students doing research from University of Oxford</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Subject_Big_Data_Speech -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Subject_Big_Data_Speech">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Big_Data"/>
+        <Name>Big_Data_about_speech</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Subject_Machine_Learning -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Subject_Machine_Learning">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Machine_Learning"/>
+        <Name>Subject_Machine_Learning</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Subject_Neural_Networks -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Subject_Neural_Networks">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Neural_Networks"/>
+        <Name>Subject_Neural_Networks</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Subject_Semantic_Technology -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Subject_Semantic_Technology">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Semantic_Technology"/>
+        <Name>Subject_Semantic_Technologies</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#TJoachims -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#TJoachims">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <First_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Joachims</First_Name>
+        <Last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">T</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#TMBreuel -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#TMBreuel">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Author"/>
+        <First_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Breuel</First_Name>
+        <Last_Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TM</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Team_Google_NLP -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Team_Google_NLP">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Professionals"/>
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Researchers"/>
+        <Name>Google&apos;s NLP doing research</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Tensorflow -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Tensorflow">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name>Tensorflow</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Toy_Datasets -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Toy_Datasets">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Sklearn"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">657</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sklearn</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Toy Datasets</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">125</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Tripod -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Tripod">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tripod</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#UOTTAWA -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#UOTTAWA">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UOTTAWA</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#USA -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#USA">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Country"/>
+        <Name>United States of America</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#United_Kingdom -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#United_Kingdom">
+        <Name>United Kingdom</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Wine_recognition_dataset -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Wine_recognition_dataset">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Dataset"/>
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Sklearn"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4567</Dataset_Size>
+        <Dataset_Website rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sklearn</Dataset_Website>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wine recognition dataset</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">245</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Xiaodong_Wang -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Xiaodong_Wang">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Co_Author"/>
+        <First_Name>Xiaodong</First_Name>
+        <Last_Name>Wang</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Yeast_Dataset -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Yeast_Dataset">
+        <Dataset_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#CostalAether"/>
+        <Dataset_Size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6072</Dataset_Size>
+        <Dataset_Website>Kaggle.com</Dataset_Website>
+        <Name>Yeast</Name>
+        <Size_in_MB rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">856</Size_in_MB>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#Zhou_Ze -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#Zhou_Ze">
+        <First_Name>Zhou</First_Name>
+        <Last_Name>Ze</Last_Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#arxiv -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#arxiv">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arxiv</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#econstor -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#econstor">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">econstor</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#ksu -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#ksu">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ksu</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#nature -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#nature">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nature</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#psycnet -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#psycnet">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">psycnet</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#thecvf -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#thecvf">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Publisher"/>
+        <Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">thecvf</Name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#01_ML_REG_Optical -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#01_ML_REG_Optical">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Index"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#02_ML_Class_Diabet -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#02_ML_Class_Diabet">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Index"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#03_ML_Class_Yeast -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#03_ML_Class_Yeast">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Index"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#04_ML_Class_Mandarian -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#04_ML_Class_Mandarian">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Index"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#05_ML_Class_Yeast -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#05_ML_Class_Yeast">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Index"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#ML-KNN:_A_Lazy_Learning_Approach_to_single_label_Learning -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#ML-KNN:_A_Lazy_Learning_Approach_to_single_label_Learning">
+        <Paper_Almost_Same_To rdf:resource="http://www.researchpapers.com/Ontology#ML-KNN:_A_lazy_learning_approach_to_multi-label_learning"/>
+        <Paper_Has_Author rdf:resource="http://www.researchpapers.com/Ontology#Zhou_Ze"/>
+        <Paper_Has_Co_Author rdf:resource="http://www.researchpapers.com/Ontology#NA"/>
+        <Paper_Has_Index rdf:resource="http://www.researchpapers.com/Ontology#05_ML_Class_Yeast"/>
+        <Paper_Has_Language rdf:resource="http://www.researchpapers.com/Ontology#German"/>
+        <Paper_Has_ProblemType rdf:resource="http://www.researchpapers.com/Ontology#Classification_Images"/>
+        <Paper_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Science_DIrect"/>
+        <Paper_Has_Subject rdf:resource="http://www.researchpapers.com/Ontology#Subject_Machine_Learning"/>
+        <Paper_Used_Dataset rdf:resource="http://www.researchpapers.com/Ontology#Yeast_Dataset"/>
+        <Cited_By rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">239</Cited_By>
+        <KNN_TYPE>KNN_FOR_Linear_Classification</KNN_TYPE>
+        <Paper_Website>Sciencdirect.com</Paper_Website>
+        <Title>Investigation of classification</Title>
+        <Versions rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</Versions>
+        <Year_Published rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2008</Year_Published>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.researchpapers.com/Ontology#ML-KNN:_A_lazy_learning_approach_to_multi-label_learning -->
+
+    <owl:NamedIndividual rdf:about="http://www.researchpapers.com/Ontology#ML-KNN:_A_lazy_learning_approach_to_multi-label_learning">
+        <rdf:type rdf:resource="http://www.researchpapers.com/Ontology#Paper"/>
+        <Paper_Has_Author rdf:resource="http://www.researchpapers.com/Ontology#ML_Zhang"/>
+        <Paper_Has_Co_Author rdf:resource="http://www.researchpapers.com/Ontology#Zhou_Ze"/>
+        <Paper_Has_Index rdf:resource="http://www.researchpapers.com/Ontology#03_ML_Class_Yeast"/>
+        <Paper_Has_Language rdf:resource="http://www.researchpapers.com/Ontology#English"/>
+        <Paper_Has_ProblemType rdf:resource="http://www.researchpapers.com/Ontology#Classification_Images"/>
+        <Paper_Has_Publisher rdf:resource="http://www.researchpapers.com/Ontology#Science_DIrect"/>
+        <Paper_Has_Subject rdf:resource="http://www.researchpapers.com/Ontology#Subject_Machine_Learning"/>
+        <Paper_Used_Dataset rdf:resource="http://www.researchpapers.com/Ontology#Yeast_Dataset"/>
+        <Cited_By rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2909</Cited_By>
+        <KNN_TYPE>KNN_For_Linear_Classification</KNN_TYPE>
+        <Paper_Website>ScienceDirect.com</Paper_Website>
+        <Title>investigation of text categorization problem</Title>
+        <Versions rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</Versions>
+        <Year_Published rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2007</Year_Published>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
